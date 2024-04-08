@@ -21,5 +21,9 @@ if incluye_simbolos:
     caracteres += string.punctuation
 
 contrasena = ''.join(random.choice(caracteres) for i in range(longitud))
-st.write('Contraseña generada:', contrasena)
+
+# Mostrar la contraseña en un campo de texto
+st.write('Contraseña generada:')
+st.text_area('Haga clic en el texto para copiarlo al portapapeles:', contrasena, height=50, key="contrasena")
+
 
