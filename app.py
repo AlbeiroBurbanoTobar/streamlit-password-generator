@@ -40,11 +40,9 @@ if not caracteres:
     st.error('Por favor, seleccione al menos una opción para incluir en la contraseña.')
 else:
     contrasena = ''.join(random.choice(caracteres) for i in range(longitud))
-    st.text_area('Contraseña generada', contrasena, height=50, key="contrasena")
+    # Se ha removido el primer text_area que era redundante
+    # Mostrar la contraseña en un campo de texto con una key única
+    st.text_area('Contraseña generada:', contrasena, height=50, key="contrasena_area")
 
-
-# Mostrar la contraseña en un campo de texto
-st.write('Contraseña generada:')
-st.text_area('Haga clic en el texto para copiarlo al portapapeles:', contrasena, height=50, key="contrasena")
 
 
