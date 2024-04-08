@@ -12,7 +12,7 @@ Este programa te permite generar contraseñas aleatorias con la longitud y los t
 - Generación de contraseñas aleatorias.
 - Personalización de la longitud de la contraseña.
 - Opción para incluir mayúsculas, minúsculas, números y símbolos en la contraseña.
-- Recuerdo de la última contraseña generada en la sesión.
+
 
 ## Uso
 
