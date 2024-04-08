@@ -13,7 +13,7 @@ div.row-widget.stCheckbox > div > label > div{margin-left:-10px;}
 """, unsafe_allow_html=True)
 
 # Título de la app
-st.markdown('## Personalice su contraseña')
+st.markdown('## Generador de contraseñas seguras')
 
 # Personalización de la contraseña
 longitud = st.slider('Longitud de la contraseña', min_value=1, max_value=20, value=12, step=1)
@@ -24,25 +24,54 @@ minusculas = st.checkbox('Minúsculas', value=True)
 numeros = st.checkbox('Números', value=True)
 simbolos = st.checkbox('Símbolos', value=True)
 
-# Generar la contraseña
-caracteres = ''
-if mayusculas:
-    caracteres += string.ascii_uppercase
-if minusculas:
-    caracteres += string.ascii_lowercase
-if numeros:
-    caracteres += string.digits
-if simbolos:
-    caracteres += string.punctuation
+# Botón para generar una nueva contraseña
+if st.button('Generar nueva contraseña'):
+    # Re-generamos la contraseña
+    caracteres = ''
+    if mayusculas:
+        caracteres += string.ascii_uppercase
+    if minusculas:
+        caracteres += string.ascii_lowercase
+    if numeros:
+        caracteres += string.digits
+    if simbolos:
+        caracteres += string.punctuation
 
-# Asegurar que se seleccione al menos una opción
-if not caracteres:
-    st.error('Por favor, seleccione al menos una opción para incluir en la contraseña.')
+    # Asegurar que se seleccione al menos una opción
+    if not caracteres:
+        st.error('Por favor, seleccione al menos una opción para incluir en la contraseña.')
+    else:
+        contrasena = ''.join(random.choice(caracteres) for i in range(longitud))
+        st.text_area('Contraseña generada:', contrasena, height=50, key="contrasena_area")
 else:
-    contrasena = ''.join(random.choice(caracteres) for i in range(longitud))
-    # Se ha removido el primer text_area que era redundante
-    # Mostrar la contraseña en un campo de texto con una key única
-    st.text_area('Contraseña generada:', contrasena, height=50, key="contrasena_area")
+    # Mantener la contraseña anterior si no se presiona el botón
+    # Se usa la sesión state para recordar la última contraseña generada
+    if 'contrasena' not in st.session_state or not st.session_state.caracteres:
+        # Generar una contraseña por primera vez
+        caracteres = ''
+        if mayusculas:
+            caracteres += string.ascii_uppercase
+        if minusculas:
+            caracteres += string.ascii_lowercase
+        if numeros:
+            caracteres += string.digits
+        if simbolos:
+            caracteres += string.punctuation
+        
+        # Guardar los caracteres en el estado de la sesión
+        st.session_state.caracteres = caracteres
+        
+        if caracteres:
+            contrasena = ''.join(random.choice(caracteres) for i in range(longitud))
+            # Guardar la contraseña en el estado de la sesión
+            st.session_state.contrasena = contrasena
+
+    st.text_area('Contraseña generada:', st.session_state.contrasena, height=50, key="contrasena_area")
+
+# Firma
+st.markdown('---')
+st.markdown('Creado por Albeiro Burbano')
+
 
 
 
