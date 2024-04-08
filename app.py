@@ -51,7 +51,7 @@ numeros = st.checkbox('Números', value=True, help='Incluir números en la contr
 simbolos = st.checkbox('Símbolos', value=True, help='Incluir símbolos en la contraseña.')
 
 # Botón para generar una nueva contraseña
-if st.button('Generar nueva contraseña'):
+if st.button('Generar contraseña'):
     try:
         # Re-generar la contraseña
         caracteres = ''
