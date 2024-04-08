@@ -16,7 +16,7 @@ div.row-widget.stCheckbox > div > label > div{margin-left:-10px;}
 st.markdown('## Generador de contraseñas seguras')
 
 # Personalización de la contraseña
-longitud = st.slider('Longitud de la contraseña', min_value=1, max_value=20, value=12, step=1)
+longitud = st.slider('Longitud de la contraseña', min_value=1, max_value=35, value=12, step=1)
 
 # Opciones de personalización
 mayusculas = st.checkbox('Mayúsculas', value=True)
@@ -70,7 +70,7 @@ else:
 
 # Firma
 st.markdown('---')
-st.markdown('Creado por Albeiro Burbano')
+st.markdown('Creado por Albeiro Burbano :)')
 
 
 
