@@ -30,7 +30,7 @@ Este programa te permite generar contraseñas aleatorias con la longitud y los t
 
 ## Contribución
 
-Tu apoyo es fundamental para mantener y mejorar mis proyectos. Si deseas contribuir, puedes hacerlo a través de [Buy Me a Coffee](https://www.buymeacoffee.com/albeirojbtr).. Cada aporte es muy valorado y ayuda a continuar con el desarrollo y la mejora constante.
+Tu apoyo es fundamental para mantener y mejorar mis proyectos. Si deseas contribuir, puedes hacerlo a través de [Buy Me a Coffee](https://www.buymeacoffee.com/albeirojbtr). Cada aporte es muy valorado y ayuda a continuar con el desarrollo y la mejora constante.
 
 ## Autor
 
